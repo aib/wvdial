@@ -642,6 +642,7 @@ void WvDialer::load_options()
         { "ISDN",            NULL, &options.isdn,          "", false        },
         { "Ask Password",    NULL, &options.ask_password,  "", false        },
         { "Dial Timeout",    NULL, &options.dial_timeout,  "", 60           },
+        { "RTSCTS",          NULL, &options.rtscts,        "", true         },
 
     	{ NULL,		     NULL, NULL,                   "", 0            }
     };
@@ -726,7 +727,7 @@ bool WvDialer::init_modem()
 	} 
 	else
 	{
-	    cloned = modem = new WvModem( options.modem, options.baud );
+	    cloned = modem = new WvModem( options.modem, options.baud, options.rtscts );
 	}
 	if( !modem->isok() ) 
 	{

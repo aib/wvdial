@@ -142,6 +142,7 @@ public:
 	int              isdn;
 	int              ask_password;
 	int              dial_timeout;
+	int              rtscts;
        
     } options;
    
